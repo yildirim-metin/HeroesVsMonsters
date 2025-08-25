@@ -2,5 +2,16 @@
 
 Console.WriteLine("Heroes VS Monsters");
 
-Character c = new Human();
-Console.WriteLine(c);
+List<Character> characters =
+[
+    new Human(),
+    new Dragon(),
+    new Orca(),
+    new Drawf(),
+    new Wolf(),
+];
+
+foreach (var c in characters)
+{
+    Console.WriteLine(c);
+}

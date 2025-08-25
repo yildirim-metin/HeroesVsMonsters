@@ -11,5 +11,5 @@ public abstract class Heroes : Character
         throw new NotImplementedException();
     }
 
-    public abstract void Rob();
+    public abstract void Loot();
 }

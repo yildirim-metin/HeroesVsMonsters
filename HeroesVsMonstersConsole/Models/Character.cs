@@ -4,18 +4,18 @@ namespace HeroesVsMonstersConsole.Models;
 
 public abstract class Character
 {
-    public int Stamina { get; protected set; }
-    public int Strength { get; protected set; }
-    public int Health { get; protected set; }
+    public virtual int Stamina { get; private set; }
+    public virtual int Strength { get; private set; }
+    public int Health { get; private set; }
 
     protected Character()
     {
-        Stamina = GetStats();
-        Strength = GetStats();
+        Stamina = GetStatValue();
+        Strength = GetStatValue();
         Health = GetHealth();
     }
 
-    protected static int GetStats()
+    private static int GetStatValue()
     {
         int maxRoll = 4;
         int[] stats = new int[maxRoll];
@@ -55,9 +55,10 @@ public abstract class Character
     public override string ToString()
     {
         return $"""
-            Stamina: {Stamina}
-            Strength: {Strength}
-            Health: {Health}
+            # {GetType().Name}
+             - Stamina: {Stamina}
+             - Strength: {Strength}
+             - Health: {Health}
             """;
     }
 }

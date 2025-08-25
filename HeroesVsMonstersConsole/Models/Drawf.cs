@@ -2,12 +2,13 @@
 
 public class Drawf : Heroes
 {
+    public override int Stamina => base.Stamina + 2;
+
     public Drawf()
     {
-        Stamina = GetStats() + 2;
     }
 
-    public override void Rob()
+    public override void Loot()
     {
         throw new NotImplementedException();
     }
