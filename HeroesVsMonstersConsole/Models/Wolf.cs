@@ -6,10 +6,12 @@ public class Wolf : Monster
 {
     public Wolf() : base()
     {
+        List<Item> items = [];
         int leatherQuantity = new Dice(1, 3).Roll();
         for (int i = 0; i < leatherQuantity; i++)
         {
-            Items.Add(new Leather());
+            items.Add(new Leather());
         }
+        Items = items;
     }
 }

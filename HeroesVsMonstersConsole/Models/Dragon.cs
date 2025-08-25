@@ -8,16 +8,19 @@ public class Dragon : Monster
 
     public Dragon() : base()
     {
+        List<Item> items = [];
         int leatherQuantity = new Dice(1, 4).Roll();
         for (int i = 0; i < leatherQuantity; i++)
         {
-            Items.Add(new Leather());
+            items.Add(new Leather());
         }
-
+        
         int goldQuantity = new Dice(1, 8).Roll();
         for (int i = 0; i < goldQuantity; i++)
         {
-            Items.Add(new Gold());
+            items.Add(new Gold());
         }
+
+        Items = items;
     }
 }

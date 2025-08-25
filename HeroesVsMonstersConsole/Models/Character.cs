@@ -4,9 +4,15 @@ namespace HeroesVsMonstersConsole.Models;
 
 public abstract class Character
 {
+    private List<Item> _items = [];
+
     public virtual int Stamina { get; private set; }
     public virtual int Strength { get; private set; }
     public int Health { get; private set; }
+    public List<Item> Items
+    {
+        get => [.. _items]; protected set => _items.AddRange(value);
+    }
 
     protected Character()
     {
@@ -74,11 +80,14 @@ public abstract class Character
 
     public override string ToString()
     {
-        return $"""
+        string toString = $"""
             # {GetType().Name}
              - Stamina: {Stamina}
              - Strength: {Strength}
              - Health: {Health}
+             - Items :
             """;
+        Items.ForEach(i => toString += "\n\t" + "* " + i.ToString());
+        return toString;
     }
 }

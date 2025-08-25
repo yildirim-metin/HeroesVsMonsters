@@ -21,3 +21,9 @@ characters[1].Hit(characters[2]);
 characters[2].Hit(characters[1]);
 
 characters.Take(1..3).ToList().ForEach(Console.WriteLine);
+
+Hero hero = new Human();
+if (characters[1] is Monster m)
+{
+    hero.Loot(m);
+}

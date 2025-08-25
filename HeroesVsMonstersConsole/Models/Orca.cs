@@ -8,10 +8,12 @@ public class Orca : Monster
 
     public Orca() : base()
     {
+        List<Item> items = [];
         int goldQuantity = new Dice(2, 15).Roll();
         for (int i = 0; i < goldQuantity; i++)
         {
-            Items.Add(new Gold());
+            items.Add(new Gold());
         }
+        Items = items;
     }
 }
