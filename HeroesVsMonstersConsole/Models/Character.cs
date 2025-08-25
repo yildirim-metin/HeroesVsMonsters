@@ -50,7 +50,27 @@ public abstract class Character
         return value;
     }
 
-    abstract public void Hit();
+    public void Hit(Character oppenent)
+    {
+        int damage = new Dice(1, 4).Roll();
+
+        if (Strength < 5)
+        {
+            oppenent.Health -= damage - 1;
+        }
+        else if (Strength < 10)
+        {
+            oppenent.Health -= damage;
+        }
+        else if (Strength < 15)
+        {
+            oppenent.Health -= damage + 1;
+        }
+        else
+        {
+            oppenent.Health -= damage + 2;
+        }
+    }
 
     public override string ToString()
     {
