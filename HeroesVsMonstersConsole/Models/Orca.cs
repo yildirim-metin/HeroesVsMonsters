@@ -1,4 +1,6 @@
-﻿namespace HeroesVsMonstersConsole.Models;
+﻿using HeroesVsMonstersConsole.Utils;
+
+namespace HeroesVsMonstersConsole.Models;
 
 public class Orca : Monster
 {
@@ -6,5 +8,10 @@ public class Orca : Monster
 
     public Orca() : base()
     {
+        int goldQuantity = new Dice(2, 15).Roll();
+        for (int i = 0; i < goldQuantity; i++)
+        {
+            Items.Add(new Gold());
+        }
     }
 }
