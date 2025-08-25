@@ -33,7 +33,7 @@ public abstract class Character
         int value;
         if (Stamina < 5)
         {
-            value = Stamina + 1;
+            value = Stamina - 1;
         }
         else if (Stamina < 10)
         {
