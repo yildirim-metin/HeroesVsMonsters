@@ -6,7 +6,7 @@ public abstract class Character
 {
     public virtual int Stamina { get; private set; }
     public virtual int Strength { get; private set; }
-    private int Health { get; }
+    public int Health { get; private set; }
 
     protected Character()
     {
