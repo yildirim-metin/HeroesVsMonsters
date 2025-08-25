@@ -12,7 +12,7 @@ public abstract class Character
     {
         Stamina = GetStats();
         Strength = GetStats();
-        Health = GetStats();
+        Health = GetHealth();
     }
 
     protected static int GetStats()
@@ -26,6 +26,28 @@ public abstract class Character
             stats[i] = dice.Roll();
         }
         return stats.Sum() - stats.Min();
+    }
+
+    private int GetHealth()
+    {
+        int value;
+        if (Stamina < 5)
+        {
+            value = Stamina + 1;
+        }
+        else if (Stamina < 10)
+        {
+            value = Stamina;
+        }
+        else if (Stamina < 15)
+        {
+            value = Stamina + 1;
+        }
+        else
+        {
+            value = Stamina + 2;
+        }
+        return value;
     }
 
     abstract public void Hit();
