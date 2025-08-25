@@ -15,7 +15,7 @@ public abstract class Character
         Health = GetStats();
     }
 
-    private static int GetStats()
+    protected static int GetStats()
     {
         int maxRoll = 4;
         int[] stats = new int[maxRoll];

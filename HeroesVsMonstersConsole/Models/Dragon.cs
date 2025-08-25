@@ -2,4 +2,8 @@
 
 public class Dragon : Monster
 {
+    public Dragon() : base()
+    {
+        Stamina = GetStats() + 1;
+    }
 }

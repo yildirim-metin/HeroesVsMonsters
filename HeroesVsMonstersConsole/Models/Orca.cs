@@ -2,4 +2,8 @@
 
 public class Orca : Monster
 {
+    public Orca() : base()
+    {
+        Strength = GetStats() + 1;
+    }
 }
